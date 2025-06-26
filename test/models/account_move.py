@@ -48,7 +48,7 @@ class AccountMove(models.Model):
                 delivery_detail = self.env['delivery.detail'].create({
                     'account_move_id': record.id,
                     'picking_id': picking.id,
-                    'invoiced': True,
+                    'invoiced': False,
                 })
 
                 # Crear las líneas del detalle
