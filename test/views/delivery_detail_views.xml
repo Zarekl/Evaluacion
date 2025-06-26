@@ -16,18 +16,22 @@
     <field name="model">delivery.detail</field>
     <field name="arch" type="xml">
         <form string="Detalle de Entrega">
-        <sheet>
-            <group>
-            <field name="picking_id"/>
-            <field name="invoiced"/>
-            </group>
-            <field name="delivery_detail_line_ids">
-            <tree>
-                <field name="qty"/>
-                <field name="uom_id"/>
-            </tree>
-            </field>
-        </sheet>
+            <sheet>
+                <group>
+                <field name="picking_id"/>
+                <field name="invoiced"/>
+                </group>
+                <field name="delivery_detail_line_ids">
+                <tree>
+                    <field name="qty"/>
+                    <field name="uom_id"/>
+                </tree>
+                </field>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
         </form>
     </field>
     </record>

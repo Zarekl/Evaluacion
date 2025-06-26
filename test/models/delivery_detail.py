@@ -7,6 +7,7 @@ from odoo.exceptions import UserError
 
 class DeliveryDetail(models.Model):
     _name = 'delivery.detail'
+    _inherit = ['mail.thread']
     _description = 'Cabecera de detalle de Entrega'
 
     # ------------------------------------------------------
@@ -66,7 +67,7 @@ class DeliveryDetail(models.Model):
         string='Factura',
         help='Factura asociada a la entrega',
     )
-    
+
     picking_id = fields.Many2one(
         'stock.picking',
         string='Transferencia',
