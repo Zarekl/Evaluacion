@@ -75,14 +75,6 @@ class AccountMove(models.Model):
     # ------------------------------------------------------
     # OTHER METHODS
     # ------------------------------------------------------
-
-    def _get_related_deliveries(self):
-        """
-        Obtiene las entregas asociadas a la factura a través de las líneas de factura.
-        """
-        self.ensure_one()
-        pickings = self.invoice_line_ids.mapped('sale_line_ids').mapped('order_id.picking_ids')
-        return pickings.filtered(lambda p: p.state == 'done')
     
     # ------------------------------------------------------
     # VARIABLES

@@ -36,6 +36,7 @@
     <field name="name">Marcar como Facturado</field>
     <field name="model_id" ref="test.model_delivery_detail"/>
     <field name="binding_model_id" ref="test.model_delivery_detail"/>
+    <field name="binding_view_types">list,form</field>
     <field name="state">code</field>
     <field name="code">
         if records:

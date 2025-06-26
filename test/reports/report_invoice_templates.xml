@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <template id="report_invoice_document_inherit_delivery" inherit_id="account.report_invoice_document">
+    <template id="report_invoice_document_inherit_delivery" inherit_id="account.report_invoice_document">
     <xpath expr="//div[@name='payment_term']" position="after">
-      <t t-if="o.move_type == 'out_invoice' and o.delivery_detail_ids">
+        <t t-if="o.move_type == 'out_invoice' and o.delivery_detail_ids">
         <div class="row mt32">
-          <div class="col-12">
+            <div class="col-12">
             <h3>Detalle de Entrega</h3>
             <table class="table table-sm o_main_table">
-              <thead>
+                <thead>
                 <tr>
-                  <th>Cantidad</th>
-                  <th>Unidad</th>
+                    <th>Cantidad</th>
+                    <th>Unidad</th>
                 </tr>
-              </thead>
-              <tbody>
+                </thead>
+                <tbody>
                 <t t-foreach="o.delivery_detail_ids" t-as="delivery">
-                  <t t-foreach="delivery.delivery_detail_line_ids" t-as="line">
+                    <t t-foreach="delivery.delivery_detail_line_ids" t-as="line">
                     <tr>
-                      <td><t t-esc="line.qty"/></td>
-                      <td><t t-esc="line.uom_id.name"/></td>
+                        <td><t t-esc="line.qty"/></td>
+                        <td><t t-esc="line.uom_id.name"/></td>
                     </tr>
-                  </t>
+                    </t>
                 </t>
-              </tbody>
+                </tbody>
             </table>
-          </div>
+            </div>
         </div>
-      </t>
+        </t>
     </xpath>
-  </template>
+    </template>
+
 </odoo>
 
 
