@@ -58,7 +58,7 @@ class AccountMove(models.Model):
                         'product_id': move_line.product_id.id,
                         'qty': move_line.qty_done,
                         'uom_id': move_line.product_uom_id.id,
-                        'lot_id': move_line.lot_id.id,
+                        'lot_id': move_line.lot_id.id if move_line.lot_id else False,
                     })
         return records
 
