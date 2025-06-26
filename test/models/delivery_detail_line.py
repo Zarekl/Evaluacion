@@ -41,11 +41,13 @@ class DeliveryDetailLine(models.Model):
         string='Detalle de Entrega',
         help='Detalle de entrega asociado a esta línea',
     )
+    
     qty = fields.Float(
         string='Cantidad',
         help='Cantidad de producto en esta línea de detalle',
         readonly=True,
     )
+
     uom_id = fields.Many2one(
         'uom.uom',
         string='Unidad de Medida',
@@ -58,6 +60,7 @@ class DeliveryDetailLine(models.Model):
         string='Producto',
         help='Producto entregado en esta línea',
     )
+
     lot_id = fields.Many2one(
         'stock.lot',
         string='Lote',

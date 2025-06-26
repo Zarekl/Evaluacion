@@ -66,6 +66,7 @@ class DeliveryDetail(models.Model):
         string='Factura',
         help='Factura asociada a la entrega',
     )
+    
     picking_id = fields.Many2one(
         'stock.picking',
         string='Transferencia',
