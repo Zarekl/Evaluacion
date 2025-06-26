@@ -7,6 +7,8 @@
     'website': 'trescloud.com',
     'depends': [
         'account',
+        'sale',
+        'stock',
     ],
     'data': [
         # security
