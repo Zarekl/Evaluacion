@@ -18,6 +18,7 @@
         'views/account_move_views.xml',
         'views/delivery_detail_views.xml',
         # reports
+        'reports/report_invoice_templates.xml',
         # wizard
         #'wizard/create_rework_wizard_views.xml',
     ],

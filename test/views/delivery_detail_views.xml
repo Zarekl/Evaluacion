@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record id="view_delivery_detail_tree" model="ir.ui.view">
+    <record id="view_delivery_detail_tree" model="ir.ui.view">
     <field name="name">delivery.detail.tree</field>
     <field name="model">delivery.detail</field>
     <field name="arch" type="xml">
-      <tree string="Detalle de Entrega">
+        <tree string="Detalle de Entrega">
         <field name="picking_id"/>
         <field name="invoiced"/>
-      </tree>
+        </tree>
     </field>
-  </record>
+    </record>
 
-  <record id="view_delivery_detail_form" model="ir.ui.view">
+    <record id="view_delivery_detail_form" model="ir.ui.view">
     <field name="name">delivery.detail.form</field>
     <field name="model">delivery.detail</field>
     <field name="arch" type="xml">
-      <form string="Detalle de Entrega">
+        <form string="Detalle de Entrega">
         <sheet>
-          <group>
+            <group>
             <field name="picking_id"/>
             <field name="invoiced"/>
-          </group>
-          <field name="delivery_detail_line_ids">
+            </group>
+            <field name="delivery_detail_line_ids">
             <tree>
-              <field name="qty"/>
-              <field name="uom_id"/>
+                <field name="qty"/>
+                <field name="uom_id"/>
             </tree>
-          </field>
+            </field>
         </sheet>
-      </form>
+        </form>
     </field>
-  </record>
+    </record>
+
+    <record id="action_mark_delivery_as_invoiced" model="ir.actions.server">
+    <field name="name">Marcar como Facturado</field>
+    <field name="model_id" ref="test.model_delivery_detail"/>
+    <field name="binding_model_id" ref="test.model_delivery_detail"/>
+    <field name="state">code</field>
+    <field name="code">
+        if records:
+            records.action_mark_as_invoiced()
+    </field>
+    </record>
 </odoo>

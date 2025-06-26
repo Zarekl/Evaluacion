@@ -6,6 +6,7 @@ from odoo import models, fields, api
 
 class DeliveryDetailLine(models.Model):
     _name = 'delivery.detail.line'
+    description = 'Línea de detalle de Entrega'
 
     # ------------------------------------------------------
     # ACTIONS

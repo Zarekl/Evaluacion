@@ -22,7 +22,7 @@ class DeliveryDetail(models.Model):
             raise UserError("No tienes permiso para verificar el detalle de entrega.")
 
         for detail in self:
-            if detail.account_move_id.payment_state != 'paid':
+            if detail.account_move_id.payment_state not in ['paid', 'in_payment']:
                 raise UserError(
                     f"La factura {detail.account_move_id.name} no está pagada. "
                     "Solo puedes marcar como facturado si está totalmente pagada."
@@ -75,6 +75,7 @@ class DeliveryDetail(models.Model):
 
     invoiced = fields.Boolean(
         string='Facturado',
+        default=False,
         help='Indica si la entrega ha sido facturada',
         tracking=True,
     )

@@ -88,3 +88,9 @@ class AccountMove(models.Model):
     # VARIABLES
     # ------------------------------------------------------
     
+    delivery_detail_ids = fields.One2many(
+        'delivery.detail',
+        'account_move_id',
+        string="Detalles de Entrega",
+        help='Detalles de entrega asociados a la factura',
+    )
