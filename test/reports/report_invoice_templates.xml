@@ -9,17 +9,19 @@
                     <table class="table table-sm o_main_table">
                         <thead>
                         <tr>
+                            <th>Producto</th>
                             <th>Cantidad</th>
                             <th>Unidad</th>
+                            <th>Lote</th>
                         </tr>
                         </thead>
                         <tbody>
                         <t t-foreach="o.delivery_detail_ids" t-as="delivery">
                             <t t-foreach="delivery.delivery_detail_line_ids" t-as="line">
                             <tr>
+                                <td><t t-esc="line.product_id.name"/></td>
                                 <td><t t-esc="line.qty"/></td>
                                 <td><t t-esc="line.uom_id.name"/></td>
-                                <td><t t-esc="line.product_id.name"/></td>
                                 <td><t t-esc="line.lot_id.name"/></td>
                             </tr>
                             </t>
