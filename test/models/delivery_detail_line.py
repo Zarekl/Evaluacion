@@ -52,3 +52,14 @@ class DeliveryDetailLine(models.Model):
         help='Unidad de medida para la cantidad de producto',
         readonly=True,
     )
+
+    product_id = fields.Many2one(
+        'product.product',
+        string='Producto',
+        help='Producto entregado en esta línea',
+    )
+    lot_id = fields.Many2one(
+        'stock.lot',
+        string='Lote',
+        help='Número de lote o serie si aplica',
+    )

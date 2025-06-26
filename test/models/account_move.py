@@ -55,8 +55,10 @@ class AccountMove(models.Model):
                 for move_line in picking.move_line_ids:
                     self.env['delivery.detail.line'].create({
                         'delivery_detail_id': delivery_detail.id,
+                        'product_id': move_line.product_id.id,
                         'qty': move_line.qty_done,
                         'uom_id': move_line.product_uom_id.id,
+                        'lot_id': move_line.lot_id.id,
                     })
         return records
 
