@@ -1,24 +1,16 @@
-# -*- encoding:utf-8 -*-
 {
-    'name': 'Modulo de Prueba',
-    'version': '1.1',
+    'name': 'Test',
+    'version': '1.0',
     'category': 'Test',
-    'description': '''
-    ''',
-    'author': '',
-    'maintainer': '',
-    'website': '',
-    'summary': 'Módulo de prueba',
-    'license': 'OEEL-1',
+    'sequence': 15,
+    'summary': 'Test Module',
+    'website': 'trescloud.com',
     'depends': [
-        
     ],
     'data': [
-        # security
-        # views
-        #'views/view.xml',
     ],
     'installable': True,
-    'auto_install': False,
     'application': True,
+    'auto_install': True,
+    'license': 'LGPL-3',
 }
